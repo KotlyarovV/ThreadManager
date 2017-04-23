@@ -10,6 +10,7 @@ import java.util.concurrent.Executors;
 public class ThreadDispatcher {
     private static ThreadDispatcher threadDispatcher;
     private ExecutorService executorService;
+    private ThreadsMonitor threadsMonitor = ThreadsMonitor.instance();
 
 
     private ThreadDispatcher () {
@@ -24,5 +25,6 @@ public class ThreadDispatcher {
 
     public void addTask (IWorker task) {
         executorService.submit(task);
+        threadsMonitor.addIWorker(task);
     }
 }
