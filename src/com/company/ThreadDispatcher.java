@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 public class ThreadDispatcher {
     private static ThreadDispatcher threadDispatcher;
     private ExecutorService executorService;
-    private ThreadsMonitor threadsMonitor = ThreadsMonitor.instance();
+    public ThreadsMonitor threadsMonitor = ThreadsMonitor.instance();
 
 
     private ThreadDispatcher () {
